@@ -1,0 +1,52 @@
+html, body {
+    height: 100%;
+    width: 100%; 
+    background-color: #0e1525;
+    color:white;
+}
+h1, h2 {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 34px;
+    text-align: center;
+    text-decoration: underline;
+    background-color: #1c2333;
+    padding: 10px;
+    margin: auto;
+    margin-left: 30px;
+    margin-right: 30px; 
+}
+h2 {
+    font-size: 28px;
+    padding: 20px;
+}
+p {
+    font-size: 14px;
+    font-family: sans-serif;
+    background-color: #1c2333;
+    padding: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+}
+img {
+    width: 60%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #1c2333;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.blurb {
+    text-align:left ;
+}
+ul {
+    margin: 30px;
+}
+ol {
+    margin: 30px;
+}
+a {
+    color: aqua;
+}
