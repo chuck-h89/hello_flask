@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Charlies from</title>
+        <link href="" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <form method="post" action="/process">
+            <p>Name: <input type="text" name="username" required></p>
+            <p>Email: <input type="email" name="email" required></p>
+            <input type="hidden" name="userID" value="232">
+            <p>City: <select name="City">
+                <option value="London">London</option>
+                <option value="Paris">Paris</option>
+                <option value="Madrid">Madrid</option>
+                <option value="New York">New York</option>
+            </select>
+            </p>
+            <button type="submit">Send data</button>
+        </form>
+    </body>
+</html>

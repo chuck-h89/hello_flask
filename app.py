@@ -1,4 +1,4 @@
-from flask import Flask, redirect
+from flask import Flask, redirect, request
 import datetime
 
 app = Flask(__name__,static_url_path="/static")  
@@ -11,9 +11,6 @@ def index():
     </body></html>"""
     return page
 
-@app.route("/w3")
-def redirectPg():
-    return redirect ("https://www.w3schools.com/html/default.asp")
 
 @app.route("/home")
 def home():
@@ -49,12 +46,16 @@ def home():
         <li>an unordered</li>
         <li>list</li>
     </ul>
-<p class="blurb"><a href="/home">home</a> | <a href="/portfolio">Portfolio</a></p>
-    <p> ©2025 charliesportfolio</p>
+    <p class="blurb"><a href="/home">Home</a> | <a href="/portfolio">Portfolio</a> | <a href="/form">Form</a></p>
+    <p>©2025 charliesportfolio</p>
 </body>
 </html>
 """
     return page
+
+@app.route("/w3")
+def redirectPg():
+    return redirect ("https://www.w3schools.com/html/default.asp")
 
 @app.route('/portfolio')
 def port():
@@ -75,6 +76,25 @@ def port():
     page = page.replace("{image}", image)
     page = page.replace("{imageTwo}", imageTwo)
     return page
+
+@app.route("/process", methods=["POST"])
+def process():
+    page = ""
+    form = request.form
+    if form["City"] == "London":
+        page += f"You're alright {form['username']}"
+    else:
+        page += f"You've picked wrong, {form['username']}"
+    return page
+
+@app.route('/form')
+def form():
+    page = ""
+    f = open("template/form.html")
+    page = f.read()
+    f.close()
+    return page
+
 
 if __name__ == "__main__":
     app.run(debug=False)
