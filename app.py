@@ -95,6 +95,12 @@ def form():
     f.close()
     return page
 
+@app.route('/get', methods=["GET"])
+def get():
+    return request.args 
+#If you type in this http://127.0.0.1:5000/get?name=bob&age=77 
+#this will return a webpage with two variables
+    
 
 if __name__ == "__main__":
     app.run(debug=False)

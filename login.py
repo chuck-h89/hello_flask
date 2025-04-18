@@ -16,13 +16,11 @@ def login():
         details = logins[form["username"]]
         isThere = True
     except:
-        return "username, eamil or password incorrect"
+        return "username, email or password incorrect"
     if form["email"] == details["email"] and form["password"] == details["password"]:
-        return "you are logged in"
+        return f"Hi {form["username"]}, you are logged in"
     else:
-        return "username, eamil or password incorrect"
-
-
+        return "username, email or password incorrect"
 
 @app.route('/')
 def index():
